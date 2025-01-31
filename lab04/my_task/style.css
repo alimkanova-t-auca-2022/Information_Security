@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('screen.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: blur(4px);
+}
+
+.payment-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid #7404d4;
+    width: 500px;
+    text-align: center;
+}
+
+.payment-window h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #7404d4;
+}
+
+.payment-window form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-window label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: left;
+    font-weight: 700;
+}
+
+.payment-window input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.payment-window button {
+    padding: 10px;
+    background-color: #7404d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.payment-window button:hover {
+    background-color: #5e039f;
+}
+
+.close-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.close-btn:hover {
+    background-color: #e53935;
+}
