@@ -8,7 +8,7 @@ CORS(app)
 
 
 # Define the path to the file where the data will be saved
-data_file = "card_data.txt"
+data_file = "lab04\my_task\card_data.txt"
 
 
 
