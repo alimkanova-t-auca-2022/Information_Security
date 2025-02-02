@@ -6,9 +6,9 @@ from email.mime.multipart import MIMEMultipart
 # Email server details (for example, Gmail's SMTP)
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
-sender_email = "tmrlmknv@gmail.com"  # Replace with your email address
+sender_email = ""  # Replace with your email address
 sender_password = "zfon jsxe wwnx TTonpvTT"     # Replace with your email password or app-specific password
-receiver_email = "talimkanova13@gmail.com"  # Replace with the recipient's email
+receiver_email = ""  # Replace with the recipient's email
 
 # HTML email content
 subject = "Подтвердите платежные данные для отправки заказа"
