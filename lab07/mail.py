@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -7,7 +8,7 @@ from email.mime.multipart import MIMEMultipart
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
 sender_email = ""  # Replace with your email address
-sender_password = "zfon jsxe wwnx TTonpvTT"     # Replace with your email password or app-specific password
+sender_password = ""     # Replace with your email password or app-specific password
 receiver_email = ""  # Replace with the recipient's email
 
 # HTML email content
