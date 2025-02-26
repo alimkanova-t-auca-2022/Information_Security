@@ -5,7 +5,7 @@ from fastapi import FastAPI, Form
 app = FastAPI()
 
 ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "12345admin"
+ADMIN_PASSWORD = "toma2005"
 
 @app.post("/login")
 def login(
