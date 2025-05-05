@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Chat</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #chat { height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+        .message { margin-bottom: 8px; }
+        .user { font-weight: bold; color: #2c3e50; }
+        .system { color: #7f8c8d; font-style: italic; }
+        #messageInput { width: 70%; padding: 8px; }
+        #sendButton { padding: 8px 15px; }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Chat</h1>
+    <div id="chat"></div>
+    <input type="text" id="messageInput" placeholder="Type your message...">
+    <button id="sendButton">Send</button>
+
+    <script>
+        const socket = new WebSocket(`ws://${window.location.host}`);
+        const chatDiv = document.getElementById('chat');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+
+        socket.onmessage = (event) => {
+            const msg = JSON.parse(event.data);
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message';
+
+            switch (msg.type) {
+                case 'system':
+                    messageElement.innerHTML = `<span class="system">${msg.content}</span>`;
+                    break;
+                case 'message':
+                    messageElement.innerHTML = `
+                        <span class="user">${msg.user}:</span>
+                        <span>${msg.content}</span>
+                    `;
+                    break;
+                case 'history':
+                    msg.data.forEach(historyMsg => {
+                        const historyElement = document.createElement('div');
+                        historyElement.className = 'message';
+                        historyElement.innerHTML = `
+                            <span class="user">${historyMsg.user}:</span>
+                            <span>${historyMsg.content}</span>
+                        `;
+                        chatDiv.appendChild(historyElement);
+                    });
+                    return;
+            }
+
+            chatDiv.appendChild(messageElement);
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        };
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (message) {
+                socket.send(message);
+                messageInput.value = '';
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        window.onload = () => messageInput.focus();
+    </script>
+</body>
+</html>
