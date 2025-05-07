@@ -8,20 +8,18 @@ A simple instant messaging chat application running over WebSocket. Supports mul
 - Browser (Chrome, Firefox, Edge)
 - Postman for testing
 
-## 🛠 Installation
-1. Download the project:
- ```bash
- git clone https://github.com/ваш-репозиторий.git
- cd websocket-chat
+## Installation
+1. Download the project
+```git clone https://github.com/ваш-репозиторий.git
+ cd websocket-chat```
 
 Install dependencies:
-npm install
+```npm install```
 
 ##Start the server:
-node server.js
+```node server.js```
 Open in a browser:
-http://localhost:3000
-
+```http://localhost:3000```
 ##Features
 - Sending messages in real time
 - Automatic usernames (e.g. "User-abc123")
@@ -40,6 +38,9 @@ Create a new WebSocket request
 Enter the address: ws://localhost:3000
 
 Click "Connect" and send messages
+
+##Project Presentation
+```https://drive.google.com/file/d/1ldMDS-Hs-t_UnollWwJR56eZrNhpJJIL/view?usp=sharing```
 
 ##Project structure
 websocket-chat/
