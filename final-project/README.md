@@ -11,7 +11,7 @@ A simple instant messaging chat application running over WebSocket. Supports mul
 ## Installation
 1. Download the project
 ```bash 
-git clone https://github.com/ваш-репозиторий.git
+git clone (this repo)
 cd websocket-chat 
 ```
 
