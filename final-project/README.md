@@ -12,11 +12,12 @@ A simple instant messaging chat application running over WebSocket. Supports mul
 1. Download the project
 ```bash 
 git clone https://github.com/ваш-репозиторий.git
-cd websocket-chat
+cd websocket-chat ```
 
 Install dependencies:
 ```bash
-npm install```
+npm install ```
+
 
 ##Start the server:
 ```node server.js```
