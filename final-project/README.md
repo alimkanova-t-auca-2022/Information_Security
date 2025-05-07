@@ -56,8 +56,11 @@ https://drive.google.com/file/d/1ldMDS-Hs-t_UnollWwJR56eZrNhpJJIL/view?usp=shari
 ```
 
 ## Project structure
+```
 websocket-chat/
 ├─── server.js # Main server
 ├─── public/
 │ └── index.html # Chat interface
 └── package.json # Dependencies
+```
+
