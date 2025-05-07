@@ -2,7 +2,7 @@
 
 A simple instant messaging chat application running over WebSocket. Supports multiple users, message history and automatic logon/logoff notifications.
 
-##  Requirements
+## Requirements
 - Node.js
 - NPM (usually comes with Node.js)
 - Browser (Chrome, Firefox, Edge)
@@ -21,7 +21,7 @@ npm install
 ```
 
 
-##Start the server:
+## Start the server:
 ```
 node server.js
 ```
@@ -31,31 +31,31 @@ Open in a browser:
 http://localhost:3000
 ```
 
-##Features
+## Features
 - Sending messages in real time
 - Automatic usernames (e.g. "User-abc123")
 - History of last 100 messages
 - New member notifications
 
-##Testing
+## Testing
 In a browser:
 Open http://localhost:3000 in two different windows.
 
 Start correspondence - messages will appear instantly
 
-##In Postman:
+## In Postman:
 Create a new WebSocket request
 
 Enter the address: ws://localhost:3000
 
 Click "Connect" and send messages
 
-##Project Presentation
+## Project Presentation
 ```
 https://drive.google.com/file/d/1ldMDS-Hs-t_UnollWwJR56eZrNhpJJIL/view?usp=sharing
 ```
 
-##Project structure
+## Project structure
 websocket-chat/
 ├─── server.js # Main server
 ├─── public/
