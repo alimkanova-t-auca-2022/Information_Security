@@ -3,13 +3,13 @@
 <head>
     <title>WebSocket Chat</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        #chat { height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+        body {font-family: Arial,sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #chat {height:400px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
         .message { margin-bottom: 8px; }
-        .user { font-weight: bold; color: #2c3e50; }
-        .system { color: #7f8c8d; font-style: italic; }
-        #messageInput { width: 70%; padding: 8px; }
-        #sendButton { padding: 8px 15px; }
+        .user { font-weight: bold;color: #2c3e50; }
+        .system { color: #7f8c8d;font-style: italic; }
+        #messageInput{ width: 70%; padding: 8px; }
+        #sendButton {padding: 8px 15px; }
     </style>
 </head>
 <body>
@@ -21,15 +21,15 @@
     <script>
         const socket = new WebSocket(`ws://${window.location.host}`);
         const chatDiv = document.getElementById('chat');
-        const messageInput = document.getElementById('messageInput');
-        const sendButton = document.getElementById('sendButton');
+        const messageInput= document.getElementById('messageInput');
+        const sendButton =document.getElementById('sendButton');
 
-        socket.onmessage = (event) => {
+        socket.onmessage =(event) =>{
             const msg = JSON.parse(event.data);
             const messageElement = document.createElement('div');
             messageElement.className = 'message';
 
-            switch (msg.type) {
+            switch(msg.type){
                 case 'system':
                     messageElement.innerHTML = `<span class="system">${msg.content}</span>`;
                     break;
@@ -52,7 +52,7 @@
                     return;
             }
 
-            chatDiv.appendChild(messageElement);
+  chatDiv.appendChild(messageElement);
             chatDiv.scrollTop = chatDiv.scrollHeight;
         };
 
@@ -73,3 +73,4 @@
     </script>
 </body>
 </html>
+
